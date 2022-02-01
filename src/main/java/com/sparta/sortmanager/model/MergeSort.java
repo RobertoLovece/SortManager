@@ -1,4 +1,4 @@
-package com.sparta.sortmanager;
+package com.sparta.sortmanager.model;
 
 public class MergeSort implements SortingAlgorithm {
 
