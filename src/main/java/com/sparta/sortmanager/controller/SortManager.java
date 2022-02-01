@@ -22,7 +22,8 @@ public class SortManager {
     public String initiateSorting(String desiredAlgorithm) {
 
         SortingAlgorithm sortingAlgorithm = getSortingAlgorithm(desiredAlgorithm);
-        sortedArray = sortingAlgorithm.sort(unsortedArray.clone());
+        sortedArray = unsortedArray.clone();
+        sortingAlgorithm.sort(sortedArray);
 
         String sortedString = Arrays.toString(sortedArray);
 

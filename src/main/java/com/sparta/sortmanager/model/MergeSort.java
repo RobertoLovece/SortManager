@@ -3,12 +3,12 @@ package com.sparta.sortmanager.model;
 public class MergeSort implements SortingAlgorithm {
 
     @Override
-    public int[] sort(int[] inputArray) {
+    public void sort(int[] inputArray) {
 
         int inputLength = inputArray.length;
 
         if (inputLength <= 1) {
-            return inputArray;
+            return;
         }
 
         int middle = inputLength/2;
@@ -28,7 +28,6 @@ public class MergeSort implements SortingAlgorithm {
 
         merge(inputArray, leftHalf, rightHalf);
 
-        return inputArray;
     }
 
     private void merge(int[] inputArray, int[] leftHalf, int[] rightHalf) {

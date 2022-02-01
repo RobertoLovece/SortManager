@@ -2,6 +2,6 @@ package com.sparta.sortmanager.model;
 
 public interface SortingAlgorithm {
 
-    public int[] sort(int[] inputArray);
+    public void sort(int[] inputArray);
 
 }
