@@ -7,10 +7,12 @@ public class SortManagerMain {
 
     public static void main(String[] args) {
 
-        int[] array = getRandomIntArray(10, 100);
+        int[] array = getRandomIntArray(11, 100);
         System.out.println("Start Array: " + Arrays.toString(array));
 
         BubbleSort bs = new BubbleSort();
+        MergeSort ms = new MergeSort();
+
         System.out.println("Sorted Array: " +Arrays.toString(bs.sort(array)));
 
     }
