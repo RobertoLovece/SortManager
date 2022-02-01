@@ -10,21 +10,24 @@ import java.util.Random;
 public class SortManager {
 
     private int[] unsortedArray;
+    private int[] sortedArray;
+
+    public String initialiseRandomArray(int size, int bound, int seed) {
+
+        unsortedArray = getRandomIntArray(size, bound, seed);
+        return Arrays.toString(unsortedArray);
+
+    }
 
     public String initiateSorting(String desiredAlgorithm) {
 
-        unsortedArray = getRandomIntArray(11, 100);
-
         SortingAlgorithm sortingAlgorithm = getSortingAlgorithm(desiredAlgorithm);
-        int[] sortedArray = sortingAlgorithm.sort(unsortedArray.clone());
+        sortedArray = sortingAlgorithm.sort(unsortedArray.clone());
 
         String sortedString = Arrays.toString(sortedArray);
 
         return sortedString;
-    }
 
-    public String getUnsortedArrayString() {
-        return Arrays.toString(unsortedArray);
     }
 
     public SortingAlgorithm getSortingAlgorithm(String algorithmType) {
@@ -38,11 +41,13 @@ public class SortManager {
         return sa;
     }
 
-    public int[] getRandomIntArray(int size, int bound) {
+    // If seed is 0 then don't use a seed
+    private int[] getRandomIntArray(int size, int bound, int seed) {
+
+        Random random = new Random(seed);
+        if (seed == 0) random = new Random();
 
         int[] result = new int[size];
-
-        Random random = new Random();
 
         for (int i = 0; i < size; i++) {
             result[i] = random.nextInt(bound);
@@ -51,5 +56,19 @@ public class SortManager {
         return result;
     }
 
+    public int[] getUnsortedArray() {
+        return unsortedArray;
+    }
 
+    public void setUnsortedArray(int[] unsortedArray) {
+        this.unsortedArray = unsortedArray;
+    }
+
+    public int[] getSortedArray() {
+        return sortedArray;
+    }
+
+    public void setSortedArray(int[] sortedArray) {
+        this.sortedArray = sortedArray;
+    }
 }

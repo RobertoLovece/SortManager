@@ -1,6 +1,5 @@
 package com.sparta.sortmanager.view;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class DisplayManager {
@@ -21,6 +20,5 @@ public class DisplayManager {
     public void displaySortedArray(String array) {
         System.out.println("Sorted Array: " + array);
     }
-
 
 }
