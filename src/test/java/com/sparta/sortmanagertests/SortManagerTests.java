@@ -17,8 +17,7 @@ public class SortManagerTests {
 
     @AfterEach
     void cleanUp() {
-        sortManager.setUnsortedArray(null);
-        sortManager.setSortedArray(null);
+        sortManager.resetArrays();
     }
 
     @DisplayName("Given an array of length 11 with random values between 0 and 100 as well as" +
@@ -39,8 +38,20 @@ public class SortManagerTests {
 
     }
 
-    // TODO Test size of random array is as expected
-    // TODO Does an array with negative values gets sorted
+    // Test the random array size is as expected
+    @DisplayName("Given a random array of set size 77 the length of the array should be 77")
+    @Test
+    public void test() {
+
+        sortManager.initialiseRandomArray(77, 100, 1);
+        int arrayLength = sortManager.getUnsortedArray().length;
+
+        Assertions.assertEquals(77, arrayLength);
+
+    }
+
+    // TODO Does an array with negative values gets sorted?
     // TODO Empty array outcome?
+    // TODO What if the array is null?
 
 }

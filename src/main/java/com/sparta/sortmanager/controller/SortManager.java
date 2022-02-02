@@ -31,7 +31,7 @@ public class SortManager {
 
     }
 
-    public SortingAlgorithm getSortingAlgorithm(String algorithmType) {
+    private SortingAlgorithm getSortingAlgorithm(String algorithmType) {
 
         SortingAlgorithm sa = switch (algorithmType) {
             case "Bubble" -> new BubbleSort();
@@ -57,19 +57,16 @@ public class SortManager {
         return result;
     }
 
+    public void resetArrays() {
+        this.unsortedArray = null;
+        this.sortedArray = null;
+    }
+
     public int[] getUnsortedArray() {
         return unsortedArray;
     }
 
-    public void setUnsortedArray(int[] unsortedArray) {
-        this.unsortedArray = unsortedArray;
-    }
-
     public int[] getSortedArray() {
         return sortedArray;
-    }
-
-    public void setSortedArray(int[] sortedArray) {
-        this.sortedArray = sortedArray;
     }
 }

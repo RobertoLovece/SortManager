@@ -1,4 +1,5 @@
 target/
+*.log
 .idea
 pom.xml.tag
 pom.xml.releaseBackup
