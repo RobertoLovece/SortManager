@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class SortManagerTests {
 
     private static SortManager sortManager;
-    private static final String DESIRED_ALGORITHM = "Merge";
+    private static final String DESIRED_ALGORITHM = "Bubble";
 
     @BeforeAll
     static void setUp() {
@@ -17,7 +17,7 @@ public class SortManagerTests {
 
     @AfterEach
     void cleanUp() {
-        sortManager.resetArrays();
+        sortManager.resetSorting();
     }
 
     @DisplayName("Given an array of length 11 with random values between 0 and 100 as well as" +
@@ -39,14 +39,14 @@ public class SortManagerTests {
     }
 
     // Test the random array size is as expected
-    @DisplayName("Given a random array of set size 77 the length of the array should be 77")
+    @DisplayName("Given a random array of set size 7 the length of the array should be 7")
     @Test
-    public void test() {
+    public void checkGetRandomArrayLength() {
 
-        sortManager.initialiseRandomArray(77, 100, 1);
+        sortManager.initialiseRandomArray(7, 100, 1);
         int arrayLength = sortManager.getUnsortedArray().length;
 
-        Assertions.assertEquals(77, arrayLength);
+        Assertions.assertEquals(7, arrayLength);
 
     }
 

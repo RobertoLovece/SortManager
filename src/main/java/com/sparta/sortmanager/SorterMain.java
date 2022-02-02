@@ -8,23 +8,27 @@ import org.apache.logging.log4j.Logger;
 
 public class SorterMain {
 
-    private static Logger logger = LogManager.getLogger("Sort-Logger");
+    public static Logger logger = LogManager.getLogger("Sort-Logger");
 
     public static void main(String[] args) {
 
-        logger.error("Test");
-
         DisplayManager displayManager = new DisplayManager();
+        logger.debug("Successfully created DisplayManager view");
+
         String desiredAlgorithm = displayManager.getDesiredAlgorithm();
         // maybe refactor to check desired algorithm with while loop
 
         SortManager sortManager = new SortManager();
+        logger.debug("Successfully created SortManager controller");
 
         String unsortedArrayString = sortManager.initialiseRandomArray(11, 100, 0);
         String sortedArrayString = sortManager.initiateSorting(desiredAlgorithm);
+        double sortingTime = sortManager.getSortingTimeSeconds();
 
+        logger.info("Successfully executed sorting algorithm outputting results with DisplayManager");
         displayManager.displayOriginalArray(unsortedArrayString);
         displayManager.displaySortedArray(sortedArrayString);
+        displayManager.displaySortingTime(sortingTime);
 
     }
 

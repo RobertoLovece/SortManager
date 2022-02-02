@@ -14,10 +14,10 @@
 - [x] <span style="color:#9BDAFC"> Create an interface which both sort classes can implement and make sure your application uses this interface where possible. </span>
 
 ### Phase 3
-- [ ] <span style="color:#B84F4F"> Add logging code into the Sort Manager project. </span>
-- [ ] <span style="color:#31A3A3"> Set up log4j in the project and add a properties file. </span>
-- [ ] <span style="color:#CCDF32"> Create logs at different levels and fully test the resulting output. Have output going to the console and to a log file created in the resources directory. </span>
-- [ ] <span style="color:#7363F8"> Ensure there are meaningful log messages added to the project and that they reflect the needs of the levels for which they are set. </span>
+- [x] <span style="color:#B84F4F"> Add logging code into the Sort Manager project. </span>
+- [x] <span style="color:#31A3A3"> Set up log4j in the project and add a properties file. </span>
+- [x] <span style="color:#CCDF32"> Create logs at different levels and fully test the resulting output. Have output going to the console and to a log file created in the resources directory. </span>
+- [x] <span style="color:#7363F8"> Ensure there are meaningful log messages added to the project and that they reflect the needs of the levels for which they are set. </span>
 
 ### Phase 4
 - [ ] <span style="color:#9BDAFC"> Integrate a new class to implement a binary search tree approach for sorting, so that the BST can be called in the same way as the other sort algorithms. </span>
@@ -26,4 +26,5 @@
 - [ ] <span style="color:#CCDF32"> Use the Facade design pattern for this step and implement a nested class to represent a node in the tree. </span>
 
 ### Phase 5
-- [ ] <span style="color:#7363F8"> Add timing information to the project and allow the user to select multiple algorithms to compare their performance. </span>
+- [ ] <span style="color:#7363F8"> Add timing information to the project</span>
+- [ ] <span style="color:#9BDAFC"> and allow the user to select multiple algorithms to compare their performance. </span>

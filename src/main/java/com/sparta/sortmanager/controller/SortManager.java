@@ -1,5 +1,6 @@
 package com.sparta.sortmanager.controller;
 
+import com.sparta.sortmanager.SorterMain;
 import com.sparta.sortmanager.model.BubbleSort;
 import com.sparta.sortmanager.model.MergeSort;
 import com.sparta.sortmanager.model.SortingAlgorithm;
@@ -12,10 +13,17 @@ public class SortManager {
     private int[] unsortedArray;
     private int[] sortedArray;
 
+    private long sortingTime;
+
     public String initialiseRandomArray(int size, int bound, int seed) {
 
         unsortedArray = getRandomIntArray(size, bound, seed);
-        return Arrays.toString(unsortedArray);
+        String unsortedString = Arrays.toString(unsortedArray);
+
+        SorterMain.logger.info("unsortedArray created (size: "+ size +
+                ", bound: " +bound + ", seed: " + seed + "): " + unsortedString);
+
+        return unsortedString;
 
     }
 
@@ -23,9 +31,16 @@ public class SortManager {
 
         SortingAlgorithm sortingAlgorithm = getSortingAlgorithm(desiredAlgorithm);
         sortedArray = unsortedArray.clone();
-        sortingAlgorithm.sort(sortedArray);
 
+        final long startTime = System.nanoTime();
+        sortingAlgorithm.sort(sortedArray);
+        final long endTime = System.nanoTime();
+
+        sortingTime = (endTime - startTime);
         String sortedString = Arrays.toString(sortedArray);
+
+        SorterMain.logger.info("sortedArray created from sorting unsortedArray: " + sortedString);
+        SorterMain.logger.info("Total sorting time was " + sortingTime + " nano-seconds (10^-9)");
 
         return sortedString;
 
@@ -38,6 +53,8 @@ public class SortManager {
             case "Merge" -> new MergeSort();
             default -> null;
         };
+
+        SorterMain.logger.debug("Created instance of: " + sa.getClass().getSimpleName());
 
         return sa;
     }
@@ -57,9 +74,12 @@ public class SortManager {
         return result;
     }
 
-    public void resetArrays() {
+    public void resetSorting() {
         this.unsortedArray = null;
         this.sortedArray = null;
+        this.sortingTime = 0;
+
+        SorterMain.logger.debug("unsortedArray, sortedArray and sortingTime was reset");
     }
 
     public int[] getUnsortedArray() {
@@ -68,5 +88,9 @@ public class SortManager {
 
     public int[] getSortedArray() {
         return sortedArray;
+    }
+
+    public double getSortingTimeSeconds() {
+        return (double) sortingTime / 1_000_000_000;
     }
 }
