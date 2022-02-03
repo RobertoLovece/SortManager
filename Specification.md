@@ -20,10 +20,10 @@
 - [x] <span style="color:#7363F8"> Ensure there are meaningful log messages added to the project and that they reflect the needs of the levels for which they are set. </span>
 
 ### Phase 4
-- [ ] <span style="color:#9BDAFC"> Integrate a new class to implement a binary search tree approach for sorting, so that the BST can be called in the same way as the other sort algorithms. </span>
-- [ ] <span style="color:#B84F4F"> The new class should implement the current Sorter interface. </span>
-- [ ] <span style="color:#31A3A3"> Add code that calls the BST and passes in the array that will be used to construct the tree and then return a sorted array. </span>
-- [ ] <span style="color:#CCDF32"> Use the Facade design pattern for this step and implement a nested class to represent a node in the tree. </span>
+- [x] <span style="color:#9BDAFC"> Integrate a new class to implement a binary search tree approach for sorting, so that the BST can be called in the same way as the other sort algorithms. </span>
+- [x] <span style="color:#B84F4F"> The new class should implement the current Sorter interface. </span>
+- [x] <span style="color:#31A3A3"> Add code that calls the BST and passes in the array that will be used to construct the tree and then return a sorted array. </span>
+- [x] <span style="color:#CCDF32"> Use the Facade design pattern for this step and implement a nested class to represent a node in the tree. </span>
 
 ### Phase 5
 - [x] <span style="color:#7363F8"> Add timing information to the project</span>

@@ -1,24 +1,11 @@
 package com.sparta.sortmanager.model;
 
+import java.util.ArrayList;
+
 public class BinarySearchTree {
 
     private Node root;
-
-    public static void main(String[] args) {
-
-        BinarySearchTree theTree = new BinarySearchTree();
-
-        theTree.addNode(50);
-        theTree.addNode(25);
-        theTree.addNode(15);
-        theTree.addNode(30);
-        theTree.addNode(75);
-        theTree.addNode(85);
-
-        theTree.inOrderTransverseTree(theTree.root);
-
-    }
-
+    private ArrayList<Integer> traverseOrder = new ArrayList<>();
 
     public void addNode(int value) {
 
@@ -65,18 +52,26 @@ public class BinarySearchTree {
         }
     }
 
-    public void inOrderTransverseTree(Node focusNode) {
+    public void createTransverseOrder(Node focusNode) {
 
         if (focusNode != null) {
 
-            inOrderTransverseTree(focusNode.leftChild);
+            createTransverseOrder(focusNode.leftChild);
 
-            System.out.println(focusNode);
+            traverseOrder.add(focusNode.value);
 
-            inOrderTransverseTree(focusNode.rightChild);
+            createTransverseOrder(focusNode.rightChild);
 
         }
 
+    }
+
+    public ArrayList<Integer> getTraverseOrder() {
+        return traverseOrder;
+    }
+
+    public Node getRoot() {
+        return root;
     }
 
     private class Node {
@@ -90,11 +85,6 @@ public class BinarySearchTree {
 
             this.value = value;
 
-        }
-
-        @Override
-        public String toString() {
-            return "value: " + value;
         }
 
     }
