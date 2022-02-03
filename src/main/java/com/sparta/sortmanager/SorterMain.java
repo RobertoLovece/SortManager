@@ -25,7 +25,7 @@ public class SorterMain {
         String sortedArrayString = sortManager.initiateSorting(desiredAlgorithm);
         double sortingTime = sortManager.getSortingTimeSeconds();
 
-        logger.info("Successfully executed sorting algorithm outputting results with DisplayManager");
+        logger.debug("Successfully executed sorting algorithm outputting results with DisplayManager");
         displayManager.displayOriginalArray(unsortedArrayString);
         displayManager.displaySortedArray(sortedArrayString);
         displayManager.displaySortingTime(sortingTime);

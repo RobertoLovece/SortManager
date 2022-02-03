@@ -26,5 +26,5 @@
 - [ ] <span style="color:#CCDF32"> Use the Facade design pattern for this step and implement a nested class to represent a node in the tree. </span>
 
 ### Phase 5
-- [ ] <span style="color:#7363F8"> Add timing information to the project</span>
+- [x] <span style="color:#7363F8"> Add timing information to the project</span>
 - [ ] <span style="color:#9BDAFC"> and allow the user to select multiple algorithms to compare their performance. </span>

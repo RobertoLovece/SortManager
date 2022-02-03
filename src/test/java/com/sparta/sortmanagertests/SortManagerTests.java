@@ -2,13 +2,19 @@ package com.sparta.sortmanagertests;
 
 import com.sparta.sortmanager.controller.SortManager;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.Arrays;
+
+// TODO Does an array with negative values gets sorted?
+// TODO Empty array outcome?
+// TODO What if the array is null?
+// TODO split down tests into separate classes to remove coupling
 
 public class SortManagerTests {
 
     private static SortManager sortManager;
-    private static final String DESIRED_ALGORITHM = "Bubble";
 
     @BeforeAll
     static void setUp() {
@@ -20,13 +26,14 @@ public class SortManagerTests {
         sortManager.resetSorting();
     }
 
+    @ParameterizedTest
+    @ValueSource(strings = {"Bubble","Merge"})
     @DisplayName("Given an array of length 11 with random values between 0 and 100 as well as" +
-            " a random seed of 1. The sorted array should match the Arrays.sort method")
-    @Test
-    public void givenAnArrayOf11Values0To100_SortedArray_MatchesArraysSort() {
+            " a random seed of 1, using bubble and merge sort the sorted array should match the Arrays.sort method")
+    public void givenAnArrayOf11Values0To100_SortedArray_MatchesArraysSort(String type) {
 
         sortManager.initialiseRandomArray(11, 100, 1);
-        sortManager.initiateSorting(DESIRED_ALGORITHM);
+        sortManager.initiateSorting(type);
 
         int[] sortedArray = sortManager.getSortedArray();
 
@@ -49,9 +56,5 @@ public class SortManagerTests {
         Assertions.assertEquals(7, arrayLength);
 
     }
-
-    // TODO Does an array with negative values gets sorted?
-    // TODO Empty array outcome?
-    // TODO What if the array is null?
 
 }
