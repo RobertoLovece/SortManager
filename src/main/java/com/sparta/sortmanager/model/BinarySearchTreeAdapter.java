@@ -2,7 +2,7 @@ package com.sparta.sortmanager.model;
 
 import java.util.List;
 
-public class BinarySearchTreeFacade implements SortingAlgorithm {
+public class BinarySearchTreeAdapter implements SortingAlgorithm {
 
     @Override
     public void sort(int[] inputArray) {

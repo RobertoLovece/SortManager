@@ -1,7 +1,7 @@
 package com.sparta.sortmanager.controller;
 
 import com.sparta.sortmanager.SorterMain;
-import com.sparta.sortmanager.model.BinarySearchTreeFacade;
+import com.sparta.sortmanager.model.BinarySearchTreeAdapter;
 import com.sparta.sortmanager.model.BubbleSort;
 import com.sparta.sortmanager.model.MergeSort;
 import com.sparta.sortmanager.model.SortingAlgorithm;
@@ -52,7 +52,7 @@ public class SortManager {
         SortingAlgorithm sa = switch (algorithmType) {
             case "Bubble" -> new BubbleSort();
             case "Merge" -> new MergeSort();
-            case "BST" -> new BinarySearchTreeFacade();
+            case "BST" -> new BinarySearchTreeAdapter();
             default -> null;
         };
 
@@ -86,10 +86,6 @@ public class SortManager {
 
     public int[] getUnsortedArray() {
         return unsortedArray;
-    }
-
-    public int[] getSortedArray() {
-        return sortedArray;
     }
 
     public double getSortingTimeSeconds() {

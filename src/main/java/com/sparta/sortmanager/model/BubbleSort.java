@@ -5,6 +5,8 @@ public class BubbleSort implements SortingAlgorithm {
     @Override
     public void  sort(int[] inputArray) {
 
+        if(inputArray == null) return;
+
         int inputLength = inputArray.length;
         int temp;
 

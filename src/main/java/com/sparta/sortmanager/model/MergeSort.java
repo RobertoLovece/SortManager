@@ -5,6 +5,8 @@ public class MergeSort implements SortingAlgorithm {
     @Override
     public void sort(int[] inputArray) {
 
+        if(inputArray == null) return;
+
         int inputLength = inputArray.length;
 
         if (inputLength <= 1) {
