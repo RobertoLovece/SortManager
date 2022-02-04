@@ -5,6 +5,10 @@ import com.sparta.sortmanager.view.DisplayManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+// TODO Does an array with negative values gets sorted?
+// TODO Empty array outcome?
+// TODO What if the array is null?
+// TODO split down tests into separate classes to remove coupling
 
 public class SorterMain {
 

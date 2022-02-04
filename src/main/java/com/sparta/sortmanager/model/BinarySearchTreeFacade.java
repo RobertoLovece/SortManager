@@ -1,22 +1,23 @@
 package com.sparta.sortmanager.model;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class BinarySearchTreeFacade implements SortingAlgorithm {
 
     @Override
     public void sort(int[] inputArray) {
 
-        BinarySearchTree binarySearchTree = new BinarySearchTree();
+        BinarySearchTree binarySearchTree = new BinarySearchTree(inputArray.length);
 
-        // convert array to bst
+        // convert array to BST
         for (int value : inputArray) {
             binarySearchTree.addNode(value);
         }
 
         binarySearchTree.createTransverseOrder(binarySearchTree.getRoot());
-        ArrayList<Integer> traverseOrder = binarySearchTree.getTraverseOrder();
+        List<Integer> traverseOrder = binarySearchTree.getTraverseOrder();
 
+        // replace array values with BST traversal values
         for (int i = 0; i < inputArray.length; i++) {
             inputArray[i] = traverseOrder.get(i);
         }

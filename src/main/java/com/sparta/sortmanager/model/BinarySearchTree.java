@@ -1,11 +1,16 @@
 package com.sparta.sortmanager.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class BinarySearchTree {
 
     private Node root;
-    private ArrayList<Integer> traverseOrder = new ArrayList<>();
+    private List<Integer> traverseOrder;
+
+    public BinarySearchTree(int traverseSize) {
+        this.traverseOrder = new ArrayList<>(traverseSize);
+    }
 
     public void addNode(int value) {
 
@@ -66,7 +71,7 @@ public class BinarySearchTree {
 
     }
 
-    public ArrayList<Integer> getTraverseOrder() {
+    public List<Integer> getTraverseOrder() {
         return traverseOrder;
     }
 
