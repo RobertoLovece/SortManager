@@ -7,6 +7,8 @@ public class BinarySearchTreeFacade implements SortingAlgorithm {
     @Override
     public void sort(int[] inputArray) {
 
+        if (inputArray == null) return;
+
         BinarySearchTree binarySearchTree = new BinarySearchTree(inputArray.length);
 
         // convert array to BST

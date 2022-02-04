@@ -12,8 +12,7 @@ public class SortManagerTests {
         sortManager = new SortManager();
     }
 
-    // Test the random array size is as expected
-    @DisplayName("Given a random array of set size 7 generated initialiseRandomArray the length of the array should be 7")
+    @DisplayName("Given a random array of set size 7 generated from initialiseRandomArray the length of the array should be 7")
     @Test
     public void checkInitialiseRandomArrayLength() {
 
