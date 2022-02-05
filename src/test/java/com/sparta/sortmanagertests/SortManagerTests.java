@@ -28,17 +28,18 @@ public class SortManagerTests {
 
     }
 
+    // "Bubble", "Merge", "BST"
     @ParameterizedTest
-    @ValueSource(strings = {"Bubble","Merge","BST"})
-    @DisplayName("Given a desired algorithm of Bubble, Merge or BST, initiateSorting" +
+    @ValueSource(strings = {"1","2","3"})
+    @DisplayName("Given a desired algorithm of 1, 2 or 3, initiateSorting" +
             " matches the Arrays.sort method")
-    public void givenAnAlgorithm_InitiateSorting_MatchesArraysSort() {
+    public void givenAnAlgorithm_InitiateSorting_MatchesArraysSort(String algorithm) {
 
         int[] actualArray = {10,73,87,91,24,5,41};
         int[] expectedArray = actualArray.clone();
 
         sortManager.setUnsortedArray(expectedArray);
-        String actualExpected = sortManager.initiateSorting("BST");
+        String actualExpected = sortManager.initiateSorting(algorithm);
 
         Arrays.sort(expectedArray);
         String expectedString = Arrays.toString(expectedArray);
@@ -57,6 +58,31 @@ public class SortManagerTests {
                 () -> sortManager.initiateSorting("Fibonacci"),
                 "No exception thrown"
         );
+    }
+
+    // "Bubble", "Merge", "BST"
+    @ParameterizedTest
+    @ValueSource(strings = {"1","2","3"})
+    @DisplayName("Given a desired algorithm of 1, 2 or 3, checkSortingAlgorithm" +
+            " returns true")
+    public void givenAValidAlgorithm_CheckSortingAlgorithm_ReturnsTrue(String algorithm) {
+
+        boolean actual = sortManager.checkSortingAlgorithm(algorithm);
+
+        Assertions.assertEquals(actual, true);
+
+    }
+
+    // "Bubble", "Merge", "BST"
+    @Test
+    @DisplayName("Given a desired algorithm of 5, checkSortingAlgorithm" +
+            " returns false")
+    public void givenAInvalidAlgorithm_CheckSortingAlgorithm_ReturnsFalse() {
+
+        boolean actual = sortManager.checkSortingAlgorithm("5");
+
+        Assertions.assertEquals(actual, false);
+
     }
 
 }

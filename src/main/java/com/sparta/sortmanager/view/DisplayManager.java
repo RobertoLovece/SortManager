@@ -7,7 +7,8 @@ import java.util.Scanner;
 public class DisplayManager {
 
     public String getDesiredAlgorithm() {
-        System.out.print("Please enter your desired algorithm type: ");
+        displayValidAlgorithms();
+        System.out.print("Please enter then number of your desired algorithm type: ");
 
         Scanner scanner = new Scanner(System.in);
         String desiredAlgorithmType = scanner.next();
@@ -15,6 +16,14 @@ public class DisplayManager {
         SorterMain.logger.info("Desired algorithm type input was: '" + desiredAlgorithmType + "'");
 
         return desiredAlgorithmType;
+    }
+
+    private void displayValidAlgorithms() {
+        System.out.println("1: Bubble Sort, 2: Merge Sort, 3: Binary Search Tree");
+    }
+
+    public void displayRepeatMessage() {
+        System.out.println("Please select a valid algorithm!");
     }
 
     public void displayOriginalArray(String array) {

@@ -47,12 +47,22 @@ public class SortManager {
 
     }
 
+    public boolean checkSortingAlgorithm(String algorithmType) {
+
+        boolean valid = switch (algorithmType) {
+            case "1", "2", "3" -> true;
+            default -> false;
+        };
+
+        return valid;
+    }
+
     private SortingAlgorithm getSortingAlgorithm(String algorithmType) {
 
         SortingAlgorithm sa = switch (algorithmType) {
-            case "Bubble" -> new BubbleSort();
-            case "Merge" -> new MergeSort();
-            case "BST" -> new BinarySearchTreeAdapter();
+            case "1" -> new BubbleSort();
+            case "2" -> new MergeSort();
+            case "3" -> new BinarySearchTreeAdapter();
             default -> null;
         };
 

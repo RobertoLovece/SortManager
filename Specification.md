@@ -3,7 +3,7 @@
 ### Phase 1
 - [x] <span style="color:#9BDAFC"> Write a program which will take an array of ints and sort it using a bubble sort algorithm </span>
 - [x] <span style="color:#B84F4F"> and then a merge sort algorithm. </span>
-- [ ] <span style="color:#7363F8"> Include JUnit tests for this and all subsequent phases (and all subsequent projects for the rest of time). </span>
+- [x] <span style="color:#7363F8"> Include JUnit tests for this and all subsequent phases (and all subsequent projects for the rest of time). </span>
 
 
 ### Phase 2
