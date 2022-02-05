@@ -71,6 +71,40 @@ public class SortManager {
         return sa;
     }
 
+    public boolean getCompareChoice(String choice) {
+        boolean valid = switch (choice) {
+            case "1" -> true;
+            default -> false;
+        };
+
+        return valid;
+    }
+
+
+    public boolean checkCompareChoice(String choice) {
+        boolean valid = switch (choice) {
+            case "1", "2" -> true;
+            default -> false;
+        };
+
+        return valid;
+    }
+
+    public boolean checkCompareAlgorithm(String choice, String previous) {
+
+        if (previous.equals(choice)) {
+            return false;
+        }
+
+        boolean valid = switch (choice) {
+            case "1", "2", "3" -> true;
+            default -> false;
+        };
+
+        return valid;
+
+    }
+
     // If seed is 0 then don't use a seed
     private int[] getRandomIntArray(int size, int bound, int seed) {
 
