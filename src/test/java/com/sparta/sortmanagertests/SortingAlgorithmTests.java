@@ -127,7 +127,6 @@ public class SortingAlgorithmTests {
 
     }
 
-
     private SortingAlgorithm getSortingAlgorithm(String algorithmType) {
 
         SortingAlgorithm sa = switch (algorithmType) {

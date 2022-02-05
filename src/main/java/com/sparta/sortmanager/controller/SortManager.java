@@ -76,16 +76,12 @@ public class SortManager {
         return result;
     }
 
-    public void resetSorting() {
-        this.unsortedArray = null;
-        this.sortedArray = null;
-        this.sortingTime = 0;
-
-        SorterMain.logger.debug("unsortedArray, sortedArray and sortingTime was reset");
-    }
-
     public int[] getUnsortedArray() {
         return unsortedArray;
+    }
+
+    public void setUnsortedArray(int[] unsortedArray) {
+        this.unsortedArray = unsortedArray;
     }
 
     public double getSortingTimeSeconds() {
