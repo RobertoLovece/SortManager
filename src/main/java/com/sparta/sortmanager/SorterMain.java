@@ -9,13 +9,24 @@ public class SorterMain {
 
     public static Logger logger = LogManager.getLogger("Sort-Logger");
 
+    // view and controller
+    private static DisplayManager displayManager = new DisplayManager();
+    private static SortManager sortManager = new SortManager();
+
     public static void main(String[] args) {
 
-        DisplayManager displayManager = new DisplayManager();
-        logger.debug("Successfully created DisplayManager view");
+        // sorts the first algorithm
+        String desiredAlgorithm = sortFirstAlgorithmMain();
 
-        SortManager sortManager = new SortManager();
-        logger.debug("Successfully created SortManager controller");
+        // compares the first to second algorithm
+        secondCompareAlgorithmsMain(desiredAlgorithm);
+
+        logger.info("Exiting application");
+        displayManager.displayGoodBye();
+
+    }
+
+    private static String sortFirstAlgorithmMain() {
 
         String desiredAlgorithm = displayManager.getDesiredAlgorithm();
         boolean validAlgorithm = sortManager.checkSortingAlgorithm(desiredAlgorithm);
@@ -30,12 +41,21 @@ public class SorterMain {
 
         String unsortedArrayString = sortManager.initialiseRandomArray(11, 100, 0);
         String sortedArrayString = sortManager.initiateSorting(desiredAlgorithm);
+
         double sortingTime = sortManager.getSortingTimeSeconds();
 
         logger.debug("Successfully executed sorting algorithm outputting results with DisplayManager");
         displayManager.displayOriginalArray(unsortedArrayString);
         displayManager.displaySortedArray(sortedArrayString);
-        displayManager.displaySortingTime(sortingTime);
+
+        String algorithmName = sortManager.getSortingAlgorithmTypeString(desiredAlgorithm);
+        displayManager.displaySortingTime(algorithmName, sortingTime);
+
+        return desiredAlgorithm;
+
+    }
+
+    private static void secondCompareAlgorithmsMain(String desiredAlgorithm) {
 
         String compareAlgorithmChoice = displayManager.getCompareAlgorithmChoice();
         boolean validCompareChoice = sortManager.checkCompareChoice(compareAlgorithmChoice);
@@ -64,23 +84,23 @@ public class SorterMain {
 
             }
 
-            sortManager.initiateSorting(compareAlgorithm);
+            double firstSortingTime = sortManager.getSortingTimeSeconds();
+
+            String sortedArrayString = sortManager.initiateSorting(compareAlgorithm);
             double compareSortingTime = sortManager.getSortingTimeSeconds();
 
-            displayManager.displayOriginalArray(unsortedArrayString);
+            displayManager.displayOriginalArray(sortManager.getUnsortedArrayString());
             displayManager.displaySortedArray(sortedArrayString);
-            displayManager.displayCompareSortingTime(sortingTime, compareSortingTime);
+
+            String firstAlgorithm = sortManager.getSortingAlgorithmTypeString(desiredAlgorithm);
+            String secondAlgorithm = sortManager.getSortingAlgorithmTypeString(compareAlgorithm);
+
+            displayManager.displayCompareSortingTime(firstAlgorithm, firstSortingTime, secondAlgorithm, compareSortingTime);
 
         }
 
-        logger.info("Exiting application");
 
     }
 
-    private void sortFirstAlgorithm() {
-
-
-
-    }
 
 }

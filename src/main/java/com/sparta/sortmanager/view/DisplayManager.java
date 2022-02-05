@@ -51,12 +51,18 @@ public class DisplayManager {
         System.out.println("Sorted Array: " + array);
     }
 
-    public void displaySortingTime(double time) {
-        System.out.println("Total sorting time was " + time + " seconds");
+    public void displaySortingTime(String algorithm, double time) {
+        System.out.println("Total sorting time of " + algorithm + " was " + time + " seconds");
     }
 
-    public void displayCompareSortingTime(double sortingTime, double compareSortingTime) {
-        System.out.println("The sorting time of option 1 was " + sortingTime + " seconds");
-        System.out.println("Compared with the sorting time of option 2 which was " + compareSortingTime + " seconds");
+    public void displayCompareSortingTime(String firstAlgorithm, double sortingTime, String secondAlgorithm, double compareSortingTime) {
+        System.out.println("The sorting time of " + firstAlgorithm + " was " + sortingTime + " seconds");
+        System.out.println("Compared with " + secondAlgorithm + " with a sorting time of " + compareSortingTime
+                + " seconds");
     }
+
+    public void displayGoodBye() {
+        System.out.println("Thanks for using the sorting algorithm application. Goodbye!");
+    }
+
 }

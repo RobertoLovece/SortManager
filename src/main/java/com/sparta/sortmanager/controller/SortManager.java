@@ -48,13 +48,7 @@ public class SortManager {
     }
 
     public boolean checkSortingAlgorithm(String algorithmType) {
-
-        boolean valid = switch (algorithmType) {
-            case "1", "2", "3" -> true;
-            default -> false;
-        };
-
-        return valid;
+        return "1".equals(algorithmType) || "2".equals(algorithmType) || "3".equals(algorithmType);
     }
 
     private SortingAlgorithm getSortingAlgorithm(String algorithmType) {
@@ -72,22 +66,11 @@ public class SortManager {
     }
 
     public boolean getCompareChoice(String choice) {
-        boolean valid = switch (choice) {
-            case "1" -> true;
-            default -> false;
-        };
-
-        return valid;
+        return "1".equals(choice);
     }
 
-
     public boolean checkCompareChoice(String choice) {
-        boolean valid = switch (choice) {
-            case "1", "2" -> true;
-            default -> false;
-        };
-
-        return valid;
+        return "1".equals(choice) || "2".equals(choice);
     }
 
     public boolean checkCompareAlgorithm(String choice, String previous) {
@@ -95,15 +78,25 @@ public class SortManager {
         if (previous.equals(choice)) {
             return false;
         }
-
-        boolean valid = switch (choice) {
-            case "1", "2", "3" -> true;
-            default -> false;
-        };
-
-        return valid;
+        else {
+            return "1".equals(choice) || "2".equals(choice) || "3".equals(choice);
+        }
 
     }
+
+    public String getSortingAlgorithmTypeString(String algorithmType) {
+
+        String algorithmString = switch (algorithmType) {
+            case "1" -> "Bubble Sort";
+            case "2" -> "Merge Sort";
+            case "3" -> "Binary Search Tree";
+            default -> "";
+        };
+
+        return algorithmString;
+
+    }
+
 
     // If seed is 0 then don't use a seed
     private int[] getRandomIntArray(int size, int bound, int seed) {
@@ -122,6 +115,10 @@ public class SortManager {
 
     public int[] getUnsortedArray() {
         return unsortedArray;
+    }
+
+    public String getUnsortedArrayString() {
+        return Arrays.toString(unsortedArray);
     }
 
     public void setUnsortedArray(int[] unsortedArray) {

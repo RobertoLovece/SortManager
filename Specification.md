@@ -27,4 +27,4 @@
 
 ### Phase 5
 - [x] <span style="color:#7363F8"> Add timing information to the project</span>
-- [ ] <span style="color:#9BDAFC"> and allow the user to select multiple algorithms to compare their performance. </span>
+- [x] <span style="color:#9BDAFC"> and allow the user to select multiple algorithms to compare their performance. </span>
