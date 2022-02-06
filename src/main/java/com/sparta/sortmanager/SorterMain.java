@@ -16,8 +16,6 @@ public class SorterMain {
 
     public static void main(String[] args) {
 
-        System.out.println("Hello");
-
         // sorts the first algorithm
         String desiredAlgorithm = sortFirstAlgorithmMain();
 

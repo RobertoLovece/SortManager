@@ -35,19 +35,30 @@ _Log4j2_ is used for logging, as well as _JUnit 5_ for unit testing.
 
 7. Run the main method and enjoy!
 
-## Running the project
-
-
 ## Design
 
 The application uses an _MVC_ design with the _model_, _view_ and _controller_ split into there
 respective packages. It also incorporates an adapter pattern to allow the _binary search tree_ to work with the 
 sorting algorithm interface.
 
+## Testing
+
+I tested all the algorithms as well as the SortManager controller class.
+To test the algorithm I used parameterised test with the algorithm type as the parameter.
+
+For the algorithms I tested the following conditions:
+
+- A normal positive value array should be sorted
+- A mixed positive and negative value array should be sorted
+- A negative value array should be sorted
+- An array full of zeros should remain the same
+- An empty array should remain the same
+- An array of null should throw a NullPointException
+
+
+
 ## Logging
 
 The logging is outputted to the 'mylogfile.log' file which is generated upon running the application.
 
-## Testing
-
-
+## Screenshots
