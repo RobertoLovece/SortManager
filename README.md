@@ -55,25 +55,27 @@ For the algorithms I tested the following conditions:
 - An empty array should remain the same
 - An array of null should throw a NullPointException
 
-Test Results:
+This resulted in a total of 18 tests cases collectively.
 
-![Screenshot_9](https://user-images.githubusercontent.com/48356710/152694512-13b4a83d-e9a6-4dd2-8117-f3c24cd3f8ee.png)
+Algorithm Test Results:
 
-![Screenshot_10](https://user-images.githubusercontent.com/48356710/152694516-910cfd2a-d4f1-4e7c-abe9-cab664da917e.png)
+![AlgorithmTestImage](https://user-images.githubusercontent.com/48356710/152694512-13b4a83d-e9a6-4dd2-8117-f3c24cd3f8ee.png)
 
-![Screenshot_11](https://user-images.githubusercontent.com/48356710/152694518-39b46e8c-b5e4-480b-9d2d-53c44cfb3098.png)
+![AlgorithmCoverageImage](https://user-images.githubusercontent.com/48356710/152694518-39b46e8c-b5e4-480b-9d2d-53c44cfb3098.png)
+
+Sort Manager (Controller) Results:
+
+![SortManagerImage](https://user-images.githubusercontent.com/48356710/152694516-910cfd2a-d4f1-4e7c-abe9-cab664da917e.png)
 
 ## Logging
 
 The logging is outputted to the 'mylogfile.log' file which is generated upon running the application.
 
-![Screenshot_12](https://user-images.githubusercontent.com/48356710/152694633-d89e8dfc-5061-4076-8ff4-fc2bd4c8be8b.png)
+![LoggingFileImage](https://user-images.githubusercontent.com/48356710/152694633-d89e8dfc-5061-4076-8ff4-fc2bd4c8be8b.png)
 
 ## Screenshots
 
-![Screenshot_7](https://user-images.githubusercontent.com/48356710/152694546-150d9f7e-392a-492c-8613-5e5c8901bbde.png)
-
-![Screenshot_8](https://user-images.githubusercontent.com/48356710/152694543-66ce5ea8-0914-40b9-a3f1-d6a9db493dcd.png)
+![ApplicationUseImage](https://user-images.githubusercontent.com/48356710/152694543-66ce5ea8-0914-40b9-a3f1-d6a9db493dcd.png)
 
 
 
