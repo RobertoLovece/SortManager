@@ -13,7 +13,10 @@ public class SorterMain {
     private static DisplayManager displayManager = new DisplayManager();
     private static SortManager sortManager = new SortManager();
 
+
     public static void main(String[] args) {
+
+        System.out.println("Hello");
 
         // sorts the first algorithm
         String desiredAlgorithm = sortFirstAlgorithmMain();
