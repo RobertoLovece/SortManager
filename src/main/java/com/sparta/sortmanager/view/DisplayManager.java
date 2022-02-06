@@ -61,8 +61,4 @@ public class DisplayManager {
                 + " seconds");
     }
 
-    public void displayGoodBye() {
-        System.out.println("Thanks for using the sorting algorithm application. Goodbye!");
-    }
-
 }

@@ -97,7 +97,6 @@ public class SortManager {
 
     }
 
-
     // If seed is 0 then don't use a seed
     private int[] getRandomIntArray(int size, int bound, int seed) {
 

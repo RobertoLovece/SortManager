@@ -18,11 +18,13 @@ public class SorterMain {
         // sorts the first algorithm
         String desiredAlgorithm = sortFirstAlgorithmMain();
 
-        // compares the first to second algorithm
-        secondCompareAlgorithmsMain(desiredAlgorithm);
+        String compareAlgorithmChoice = checkIfComparingMain();
+
+        if (sortManager.getCompareChoice(compareAlgorithmChoice)) {
+            compareAlgorithmsMain(desiredAlgorithm);
+        }
 
         logger.info("Exiting application");
-        displayManager.displayGoodBye();
 
     }
 
@@ -55,7 +57,7 @@ public class SorterMain {
 
     }
 
-    private static void secondCompareAlgorithmsMain(String desiredAlgorithm) {
+    private static String checkIfComparingMain() {
 
         String compareAlgorithmChoice = displayManager.getCompareAlgorithmChoice();
         boolean validCompareChoice = sortManager.checkCompareChoice(compareAlgorithmChoice);
@@ -68,37 +70,38 @@ public class SorterMain {
             validCompareChoice = sortManager.checkCompareChoice(compareAlgorithmChoice);
         }
 
-        if (sortManager.getCompareChoice(compareAlgorithmChoice)) {
+        return compareAlgorithmChoice;
 
-            String compareAlgorithm = displayManager.getDesiredAlgorithm();
+    }
 
-            boolean validCompareAlgorithm =
-                    sortManager.checkCompareAlgorithm(compareAlgorithm, desiredAlgorithm);
+    private static void compareAlgorithmsMain(String desiredAlgorithm) {
 
-            while (!validCompareAlgorithm) {
-                logger.warn("Invalid compare algorithm type entered, retrying input");
+        String compareAlgorithm = displayManager.getDesiredAlgorithm();
 
-                displayManager.displayRepeatCompareMessage();
-                compareAlgorithm = displayManager.getDesiredAlgorithm();
-                validCompareAlgorithm = sortManager.checkCompareAlgorithm(compareAlgorithm, desiredAlgorithm);
+        boolean validCompareAlgorithm =
+                sortManager.checkCompareAlgorithm(compareAlgorithm, desiredAlgorithm);
 
-            }
+        while (!validCompareAlgorithm) {
+            logger.warn("Invalid compare algorithm type entered, retrying input");
 
-            double firstSortingTime = sortManager.getSortingTimeSeconds();
-
-            String sortedArrayString = sortManager.initiateSorting(compareAlgorithm);
-            double compareSortingTime = sortManager.getSortingTimeSeconds();
-
-            displayManager.displayOriginalArray(sortManager.getUnsortedArrayString());
-            displayManager.displaySortedArray(sortedArrayString);
-
-            String firstAlgorithm = sortManager.getSortingAlgorithmTypeString(desiredAlgorithm);
-            String secondAlgorithm = sortManager.getSortingAlgorithmTypeString(compareAlgorithm);
-
-            displayManager.displayCompareSortingTime(firstAlgorithm, firstSortingTime, secondAlgorithm, compareSortingTime);
+            displayManager.displayRepeatCompareMessage();
+            compareAlgorithm = displayManager.getDesiredAlgorithm();
+            validCompareAlgorithm = sortManager.checkCompareAlgorithm(compareAlgorithm, desiredAlgorithm);
 
         }
 
+        double firstSortingTime = sortManager.getSortingTimeSeconds();
+
+        String sortedArrayString = sortManager.initiateSorting(compareAlgorithm);
+        double compareSortingTime = sortManager.getSortingTimeSeconds();
+
+        displayManager.displayOriginalArray(sortManager.getUnsortedArrayString());
+        displayManager.displaySortedArray(sortedArrayString);
+
+        String firstAlgorithm = sortManager.getSortingAlgorithmTypeString(desiredAlgorithm);
+        String secondAlgorithm = sortManager.getSortingAlgorithmTypeString(compareAlgorithm);
+
+        displayManager.displayCompareSortingTime(firstAlgorithm, firstSortingTime, secondAlgorithm, compareSortingTime);
 
     }
 
