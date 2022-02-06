@@ -3,7 +3,7 @@
 ## Summary
 
 An application that's purpose is to sort a random array of integers using either _bubble sort, merge sort or a
-binary search tree_. 
+binary search tree_. After sorting with one algorithm it then gives you the option to select another to compare the sort time to using the same array.
 The project is made in _Java_ with _Maven_. 
 _Log4j2_ is used for logging, as well as _JUnit 5_ for unit testing.
 
