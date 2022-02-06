@@ -69,7 +69,7 @@ Sort Manager (Controller) Results:
 
 ## Logging
 
-The logging is outputted to the 'mylogfile.log' file which is generated upon running the application.
+The logging is outputted to the 'mylogfile.log' file which is generated upon running the application. There were 3 levels of logging utilised debug, info and warn. 
 
 ![LoggingFileImage](https://user-images.githubusercontent.com/48356710/152694633-d89e8dfc-5061-4076-8ff4-fc2bd4c8be8b.png)
 
